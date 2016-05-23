@@ -1,0 +1,36 @@
+<form data-eid="subcat-add-form">
+    <div class="row">
+        <div class="col-md-8 no-padding-right">
+            <div class="form-group">
+                <select class="form-control" required>
+                    <option value="">Родительская категория</option>
+                    <% _.each(parentCatList, function(parentCat){ %>
+                        <% if( parentCat.id == model.id ){ %>
+                            <option selected><%=parentCat.name %></option>
+                        <% } else { %>
+                            <option><%=parentCat.name%></option>
+                        <% } %>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 no-padding-right">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Название подкатегории"
+                       data-eid="cat-name" required name="cat-name">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" data-eid="save-added-subcat">Сохранить</button>
+                <button type="button" class="btn btn-default" data-eid="cancel-edit">Отменить</button>
+            </div>
+        </div>
+    </div>
+</form>

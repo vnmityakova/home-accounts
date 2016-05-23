@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-3 edit-block" data-eid="edit-block">
+        <a data-eid="link" class="link dotted" data-toggle="collapse" href="#toggable<%= data.id %>"
+           aria-expanded="false" aria-controls="toggable">
+            <%= data.storageName %>
+        </a>
+        <span class="glyphicon glyphicon-pencil icon" data-eid="link" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-3">
+        <span><%= Utils.addSpacesToSum(data.currentBalance) %></span> руб.
+    </div>
+</div>
+
+<!-- editForm -->
+<div class="top15" data-eid="edit-form" style="display: none">
+    <div class="well" data-storages-type="storage-item-form">
+        <form class="form-horizontal"  data-eid="wallet-edit-form">
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input class="form-control" type="text" name="cardName" placeholder="название" data-eid="name"
+                           value="<%=data.storageName%>" required>
+                </div>
+                <div class="col-md-3 no-padding-left">
+                    <input class="form-control" type="text" name="curBalance" placeholder="баланс" data-eid="balance"
+                           value="<%=data.currentBalance%>" required data-rule-number="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            <% if ( data.mayBeSpent == true ) { %>
+                            <input type="checkbox" checked>
+                            <% } else { %>
+                            <input type="checkbox">
+                            <% } %> Могу тратить
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" data-eid="save" type="button">Сохранить</button>
+                    <button class="btn btn-default" data-eid="remove" type="button">Удалить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

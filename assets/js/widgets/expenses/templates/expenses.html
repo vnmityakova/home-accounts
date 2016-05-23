@@ -1,0 +1,102 @@
+<div class="row" data-widget="expenses">
+    <div class="col-md-12">
+
+        <h4>Расходы</h4>
+
+
+        <div class="row">
+            <div class="col-md-8">
+                <div data-eid="add-form">
+                    <form data-eid="exp-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Сумма" data-eid="ammount" required name="ammount" data-rule-number="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control"  data-eid="category-name" required name="category-name">
+                                        <option value="">Потрачено на</option>
+                                        <% _.each(data.expenseCategories, function(expense){ %>
+                                            <% if (expense.isParent){%>
+                                                <option value="<%=expense.id%>"><%=expense.name%></option>
+                                            <% } else { %>
+                                                <option value="<%=expense.id%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=expense.name%></option>
+                                            <% } %>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" data-eid="storage-name" required name="storage-name">
+                                        <option value="">Оплачено с</option>
+                                        <% _.each(data.storageList, function(storage){ %>
+                                        <option value="<%=storage.id%>"><%=storage.name %></option>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control date-fld" placeholder="Дата" data-eid="date"
+                                           required name="exp-date" data-rule-date-rus="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Описание" data-eid="descr">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="button" data-eid="add-item">
+                                        Добавить
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div data-eid="edit-form"></div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="dateInput"></div>
+            </div>
+        </div>
+
+
+        <table class="table table-hover top20" style="display: none">
+            <tbody data-eid="expenses-tbl">
+            <tr class="grey">
+                <td width="20%">сумма</td>
+                <td width="30%">потрачено на </td>
+                <td width="25%">потрачено с </td>
+                <td width="15%">дата</td>
+                <td width="10%"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div data-eid="no-expenses-found" class="top20 no-items-found" style="display: none">За указанный период расходов нет</div>
+
+    </div>
+</div>

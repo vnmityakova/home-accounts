@@ -1,0 +1,410 @@
+/*-------------- base & utils ----------------------*/
+
+@light-gray: #75787b;
+
+body {
+  color: #555;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+  margin-bottom: 25px;
+}
+
+.top15 {
+  margin-top: 15px;
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+.top40 {
+  margin-top: 40px;
+}
+
+
+.top75 {
+  margin-top: 75px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.no-padding-right {
+  padding-right: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.glyphicon {
+  color: #999;
+}
+
+button {
+  .glyphicon {
+    color: #FFFFFF;
+  }
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+button + button {
+  margin-left: 15px;
+}
+
+.well {
+  min-height: 0px;
+  border: none;
+  box-shadow: none;
+  border-radius: 2px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.dotted, .dotted:hover, .dotted:focus, .dotted:active, .dotted:visited {
+  text-decoration: none;
+  border-bottom: 1px dashed #999;
+}
+
+.navbar-fixed-top {
+  border-color: orange;
+}
+
+table {
+  .glyphicon + .glyphicon {
+    padding-left: 10px;
+  }
+}
+
+.glyphicon-pencil, .glyphicon-remove {
+  cursor: pointer;
+}
+
+.active {
+    color: darkorange;
+}
+
+button.btn {
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background-color: darkorange;
+  border-color: lighten(darkorange, 5%);
+
+  &:hover, &:focus {
+    background-color: lighten(darkorange, 5%);
+    border-color: darkorange;
+  }
+}
+
+.form-control {
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.well .form-group:last-child {
+  margin-bottom: 0;
+}
+
+input.form-control, select.form-control {
+  height: 38px;
+}
+
+.form-horizontal .checkbox, .form-horizontal .radio {
+  min-height: 0;
+}
+
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline {
+  padding-top: 0;
+}
+
+/*-------------- //base & utils ----------------------*/
+/*-------------- pie chart ----------------------*/
+
+.pie-legend {
+  list-style: none;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  padding-right: 25px;
+
+  li {
+    display: block;
+    padding-left: 30px;
+    line-height: 18px;
+    position: relative;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    padding: 2px 8px 0px 28px;
+    font-size: 14px;
+    cursor: default;
+    -webkit-transition: background-color 200ms ease-in-out;
+    -moz-transition: background-color 200ms ease-in-out;
+    -o-transition: background-color 200ms ease-in-out;
+    transition: background-color 200ms ease-in-out;
+
+    span {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+.labeled-chart-container {
+  padding-right: 150px;
+  min-height: 180px;
+  position: relative;
+}
+
+/*-------------- //pie chart ----------------------*/
+/*-------------- current page ----------------------*/
+
+
+.cur-label {
+  .grey();
+  margin-left: 10px;
+}
+
+.label-custom {
+  margin-left: 10px;
+  position: absolute; 
+}
+
+.grey {
+  color: #999;
+}
+
+.storage-item {
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+/*-------------- //current page ----------------------*/
+
+.categoryItem {
+  padding-bottom: 5px;
+  display: inline-block;
+
+  &:hover{
+    color: #777;
+  }
+}
+
+//menu
+.menu-block li.current {
+  background-color: #eee;
+}
+
+/*-------------- storages page ----------------------*/
+
+.storageTypeName {
+  font-size: 16px;
+  padding: 10px 10px 10px 0;
+  display: inline-block;
+}
+
+.storageTypeNameBlock {
+
+  .add-storage {
+    //display: none;
+    cursor: pointer;
+  }
+
+  /*&:hover {
+    .add-storage {
+      display: inline;
+    }
+  }*/
+}
+
+.storageTypeNameBlock {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.storageTypeBlock {
+  padding-bottom: 20px;
+}
+
+
+.edit-block { //edit-storage-block - common module!
+  position: relative;
+
+  &:hover {
+    .icon {
+      display: inline;
+    }
+  }
+
+  .icon {
+    .label-custom();
+    cursor: pointer;
+    display: none;
+  }
+
+  &.active{
+    .link {
+      color: darkorange;
+      border-color: darkorange;
+    }
+    .icon {
+      display: inline;
+      /*color: darkorange;*/
+    }
+  }
+
+}
+
+/*-------------- //storages page ----------------------*/
+
+//redefine bootstrap css
+.panel {
+  border: none;
+  box-shadow: none;
+}
+
+.panel-body {
+  padding-top: 0;
+}
+
+/*-------------- //expense cat-s ----------------------*/
+.subcats {
+  padding-left: 20px;
+  padding-bottom: 4px;
+}
+
+.categories {
+  padding-bottom: 4px;
+}
+
+a.dotted {
+  color: #555;
+
+  &:hover {
+    color: #777;
+  }
+}
+
+.categories, .subcats {
+  cursor: pointer;
+  &:hover {
+    color: #777;
+    .icon {
+      display: inline;
+    }
+  }
+
+  .icon {
+    display: none;
+    //padding-left: 10px;
+  }
+
+}
+
+.categories {
+  .add-storage {
+    padding-left: 10px;
+  }
+}
+
+/*-------------- //expense cat-s ----------------------*/
+ .orange-bg {
+   background-color: orange;
+   transition: all 150ms ease-out;
+ }
+
+.white-bg {
+  background-color: #fff !important;
+}
+
+.nav>li {
+  > a {
+    color: @light-gray;
+  }
+  &.current a {
+    color: darkorange;
+  }
+}
+
+.ui-datepicker.ui-datepicker-inline {
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin-top: -1px;
+}
+
+.form-control.date-fld {
+  padding-left: 38px;
+}
+
+.no-items-found {
+  color: @light-gray;
+}
+
+select.form-control {
+  /*border: 0;
+  outline: 1px inset #ccc;
+  outline-offset: -1px;*/
+
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+}
+
+input, select {
+  &.error {
+    border: 1px solid #FFA2A2;
+  }
+}
+
+label.error {
+  position: absolute;
+  top: -19px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #DC7676;
+}
+
+
+
+
+

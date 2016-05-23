@@ -1,0 +1,39 @@
+<form data-eid="edit-cat-form">
+    <%if(!data.isMainCat) {%>
+    <div class="row">
+        <div class="col-md-8 no-padding-right">
+            <div class="form-group">
+                <select class="form-control" data-eid="parent-cat" required name="parent-cat">
+                    <option value="">Родительская категория</option>
+                    <% _.each(data.parentCatList, function(parentCat){ %>
+                    <% if( parentCat.id == data.parentId ){ %>
+                        <option selected value="<%=parentCat.id %>"><%=parentCat.name %></option>
+                    <% } else { %>
+                        <option value="<%=parentCat.id %>"><%=parentCat.name%></option>
+                    <% } %>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+    <% } %>
+
+    <div class="row">
+        <div class="col-md-8 no-padding-right">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Название категории" data-eid="edited-cat-name"
+                       value="<%=data.name%>" required name="edited-cat-name">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" data-eid="save-edited">Сохранить</button>
+                <button type="button" class="btn btn-default" data-eid="remove">Удалить</button>
+                <button type="button" class="btn btn-default" data-eid="cancel-edit">Отменить</button>
+            </div>
+        </div>
+    </div>
+</form>

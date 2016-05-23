@@ -1,0 +1,79 @@
+<form data-eid="exp-edit-form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Сумма" value="<%= data.expenseAmmount %>"
+                       data-eid="ammount" required name="ammount" data-rule-number="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <select class="form-control" data-eid="category-name" required name="category-name">
+                    <option value="00">Потрачено на</option>
+                    <% _.each(data.expenseCategories, function(expense){ %>
+                        <% if (! expense.isParent){%>
+                            <% var newName = "&nbsp;&nbsp;&nbsp;&nbsp;" + expense.name %>
+                        <% } else {%> <!-- categoryName -->
+                            <% var newName = expense.name %>
+                        <% } %>
+                    <% if(expense.id == data.categoryId) { %>
+                        <option value="<%=expense.id%>" selected><%=newName%></option>
+                    <% } else { %>
+                        <option value="<%=expense.id%>"><%=newName%></option>
+                    <% } %>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <select class="form-control" data-eid="storage-name" required name="storage-name">
+                    <option value="00">Оплачено с</option>
+                    <% _.each(data.storageList, function(storage){ %>
+                        <% if(storage.name == data.expenseSource) { %>
+                            <option value="<%=storage.id%>" selected><%=storage.name %></option>
+                        <% } else { %>
+                            <option value="<%=storage.id%>"><%=storage.name %></option>
+                        <% } %>
+                    <% }); %> <!-- expenseSource -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input type="text" class="date-fld form-control" placeholder="Дата" value="<%= data.expenseDate %>"
+                       data-eid="date" required name="exp-date" data-rule-date-rus="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Описание" data-eid="descr" value="<%= data.descr %>">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <button class="btn btn-primary" type="button" data-eid="save">
+                    Сохранить
+                </button>
+                <button class="btn btn-default" type="button" data-eid="cancel-edit">
+                    Отменить
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

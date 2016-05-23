@@ -1,0 +1,47 @@
+<div class="well" data-eid="new-item"  style="display: none">
+    <form class="form-horizontal" data-eid="deposit-form">
+        <div class="form-group">
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="cardName" placeholder="название" data-eid="item-name" required>
+            </div>
+            <div class="col-md-3 no-padding-left">
+                <input class="form-control" type="text" name="curBalance" placeholder="баланс" data-eid="item-balance" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="bankName" placeholder="банк" data-eid="bank-name" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input class="form-control" type="text" name="openDate" placeholder="открыт" data-eid="start-date" data-rule-date-rus="true">
+            </div>
+            <div class="col-md-3 no-padding-left">
+                <input class="form-control" type="text" name="closeDate" placeholder="закроется" data-eid="end-date" data-rule-date-rus="true">
+            </div>
+            <div class="col-md-2 no-padding-left">
+                <input class="form-control" type="text" name="closeDate" placeholder="процент" data-eid="percent">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">
+                        Могу тратить
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <button class="btn btn-primary" type="button" data-eid="add-item">Добавить вклад</button>
+                <button class="btn btn-default" type="button" data-eid="cancel-edit">Отменить</button>
+            </div>
+        </div>
+    </form>
+</div>

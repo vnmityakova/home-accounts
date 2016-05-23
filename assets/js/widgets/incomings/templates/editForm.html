@@ -1,0 +1,72 @@
+<form data-eid="inc-edit-form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Сумма" value="<%=data.incomingAmmount%>" data-eid="ammount" required name="sum">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <select class="form-control" data-eid="category-name" name="category-name" required>
+                    <option>Источник дохода</option>
+                    <% _.each(data.sources, function(source){ %>
+                        <% if(source.name == data.categoryName) { %>
+                            <option value="<%=source.id%>" selected><%=source.name %></option>
+                        <% } else { %>
+                            <option value="<%=source.id%>"><%=source.name %></option>
+                        <% } %>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <select class="form-control" data-eid="storage-name" name="storage-name" required>
+                    <option>Место хранения</option>
+                    <% _.each(data.storageList, function(storage){ %>
+                        <% if(storage.name == data.storageName) { %>
+                            <option value="<%=storage.id%>" selected><%=storage.name %></option>
+                        <% } else { %>
+                            <option value="<%=storage.id%>"><%=storage.name %></option>
+                        <% } %>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input type="text" class="form-control date-fld" placeholder="Дата" value="<%=data.incomingDate%>" data-eid="date" required name="inc-date">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Описание" data-eid="descr" value="<%=data.descr%>">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <button class="btn btn-primary" type="button" data-eid="save">
+                    Сохранить
+                </button>
+                <button class="btn btn-default" type="button" data-eid="cancel-edit">
+                    Отменить
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

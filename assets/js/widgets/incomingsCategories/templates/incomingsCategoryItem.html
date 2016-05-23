@@ -1,0 +1,25 @@
+<div data-eid="item">
+    <div data-eid="category-item-block" class="pointer edit-block">
+        <span class="categoryItem link" data-eid="cat-name"><%= data.name %></span>
+        <!--<a href="#" data-eid="edit-link">-->
+            <span class="glyphicon glyphicon-pencil icon" aria-hidden="true"></span>
+        <!--</a>-->
+    </div>
+
+    <div data-eid="edit" class="itemBlock" style="display: none">
+        <form data-eid="inc-cat-edit-form">
+            <div class="form-group">
+                <div class="row top20">
+                    <div class="col-md-6 no-padding-right">
+                        <input type="text" class="form-control" placeholder="Название типа дохода" data-eid="name" value="<%= data.name %>" required name="categ-name">
+                    </div>
+                    <div class="col-md-5">
+                        <button type="button" class="btn btn-primary" data-eid="save-cat">Сохранить</button>
+                        <button type="button" class="btn btn-default" data-eid="remove-cat">Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

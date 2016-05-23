@@ -1,0 +1,103 @@
+<div class="row" data-widget="incomings">
+    <div class="col-md-12">
+
+        <h4>Доходы</h4>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div data-eid="add-form">
+                    <form data-eid="inc-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control"  placeholder="Сумма" data-eid="ammount" data-rule-number="true" required name="sum">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control" data-eid="category-name" name="category-name" required>
+                                        <option value="">Источник дохода</option>
+                                        <% _.each(data.sources, function(source){ %>
+                                        <option value="<%=source.id%>"><%=source.name %></option>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <select class="form-control"  data-eid="storage-name" name="storage-name" required>
+                                        <option value="">Место хранения</option>
+                                        <% _.each(data.storageList, function(storage){ %>
+                                        <option value="<%=storage.id%>"><%=storage.name %></option>
+                                        <% }); %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control date-fld" required name="inc-date"
+                                           placeholder="Дата" data-eid="date" data-rule-date-rus="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="descr" name="descr"
+                                           placeholder="Описание" data-eid="descr">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="button" data-eid="add-item">
+                                        Добавить
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <div data-eid="edit-form" style="display: none;">
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="dateInput"></div>
+            </div>
+        </div>
+
+
+        <table class="table table-hover top20" style="display: none">
+            <tbody data-eid="incomings-tbl">
+            <tr class="grey">
+                <td>сумма</td>
+                <td>источник</td>
+                <td>место хранения</td>
+                <td>дата</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div data-eid="no-incomings-found" class="top20 no-items-found" style="display: none">За указанный период доходов нет</div>
+
+    </div>
+</div>

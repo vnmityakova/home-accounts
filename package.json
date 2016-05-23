@@ -1,0 +1,19 @@
+{
+  "name": "home_accounts",
+  "version": "1.0.0",
+  "description": "домашняя бухгалтерия",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vnmityakova",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "grunt": "^0.4.5",
+    "grunt-bower-requirejs": "^2.0.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-less": "^1.2.0",
+    "less": "^2.6.0"
+  }
+}

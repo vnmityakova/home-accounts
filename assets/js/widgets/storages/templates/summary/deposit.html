@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-3 edit-block" data-eid="edit-block">
+        <a data-eid="link" class="link dotted" data-toggle="collapse" href="#toggable<%= data.id %>"
+           aria-expanded="false" aria-controls="toggable">
+            <%= data.storageName %>
+        </a>
+        <span class="glyphicon glyphicon-pencil icon" data-eid="link" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-2">
+        <span><%= Utils.addSpacesToSum(data.currentBalance) %> руб.</span></div>
+    <div class="col-md-3"><%= data.bankName %></div>
+    <div class="col-md-2"><%= data.startDate%> - <%= data.endDate%></div>
+    <div class="col-md-1"><%= data.percent%>%</div>
+    <div class="col-md-1"> <%= data.mayBeSpent%></div>
+
+</div>
+
+<!-- editForm -->
+<div data-eid="edit-form" style="display: none" class="top15">
+    <div class="well" data-storages-type="storage-item-form">
+        <form class="form-horizontal" data-eid="deposit-edit-form">
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input class="form-control" type="text" name="cardName" placeholder="название" data-eid="name"
+                           value="<%=data.storageName%>" required>
+                </div>
+                <div class="col-md-3 no-padding-left">
+                    <input class="form-control" type="text" name="curBalance" placeholder="баланс" data-eid="balance"
+                           value="<%=data.currentBalance%>" required data-rule-number="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input class="form-control" type="text" name="bankName" placeholder="банк" data-eid="bank-name"
+                           value="<%=data.bankName%>" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    <input class="form-control" type="text" name="openDate" placeholder="открыт" data-eid="open-date"
+                           value="<%=data.startDate%>" data-rule-date-rus="true">
+                </div>
+                <div class="col-md-3 no-padding-left">
+                    <input class="form-control" type="text" name="closeDate" placeholder="закроется" data-eid="clode-date"
+                           value="<%=data.endDate%>" data-rule-date-rus="true">
+                </div>
+                <div class="col-md-2 no-padding-left">
+                    <input class="form-control" type="text" name="closeDate" placeholder="процент" data-eid="percent"
+                           value="<%=data.percent%>">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    <div class="checkbox">
+                        <label>
+                            <% if ( data.mayBeSpent == true ) { %>
+                            <input type="checkbox" checked>
+                            <% } else { %>
+                            <input type="checkbox">
+                            <% } %> Могу тратить
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-8">
+                    <button class="btn btn-primary" data-eid="save" type="button">Сохранить</button>
+                    <button class="btn btn-default" data-eid="remove" type="button">Удалить</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
